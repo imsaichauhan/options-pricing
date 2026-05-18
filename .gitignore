@@ -1,0 +1,39 @@
+# Raw data files — never commit these
+data/
+*.csv
+*.xlsx
+*.xls
+*.zip
+*.gz
+*.h5
+*.parquet
+*.json
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment files
+.env
+*.env
+.envrc
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Conda / pip artifacts
+*.egg
+
+# Large model files
+*.pkl
+*.joblib
+*.model
