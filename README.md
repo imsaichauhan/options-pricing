@@ -20,7 +20,7 @@ This project implements European options pricing from first principles and appli
 
 ### 1. Black-Scholes Pricing
 
-Implemented the Black-Scholes closed-form pricer for European calls and puts from first principles using the standard $d_1$/$d_2$ formulation:
+Implemented the Black-Scholes closed-form pricer for European calls and puts from first principles using the standard $d_1$ and $d_2$ formulation:
 
 ```math
 d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}, \quad d_2 = d_1 - \sigma\sqrt{T}
@@ -34,7 +34,7 @@ Validated against Hull Chapter 13 reference values (call = 10.4506, put = 5.5735
 
 ### 2. Analytical Greeks
 
-Derived all five Greeks analytically from the Black-Scholes formula. Delta $= N(d_1)$ is the risk-adjusted probability of expiry in the money and represents the hedge ratio for a Delta-neutral position. Gamma measures the rate of change of Delta and peaks at ATM where Delta sensitivity is highest. Vega measures sensitivity to a 1% change in volatility and is highest for ATM options with time remaining. Theta measures time decay per calendar day using a 365-day convention. All Greeks validated against Hull Chapter 17 reference values.
+Derived all five Greeks analytically from the Black-Scholes formula. Delta, $N(d_1)$, is the risk-adjusted probability of expiry in the money and represents the hedge ratio for a Delta-neutral position. Gamma measures the rate of change of Delta and peaks at ATM where Delta sensitivity is highest. Vega measures sensitivity to a 1% change in volatility and is highest for ATM options with time remaining. Theta measures time decay per calendar day using a 365-day convention. All Greeks validated against Hull Chapter 17 reference values.
 
 Greeks were plotted against spot price from 60 to 140 ($K=100$ fixed) to demonstrate their behaviour across moneyness. The four charts confirm the standard shapes: Delta as an S-curve, Gamma and Vega as bell curves peaking at ATM, and Theta most negative at ATM.
 
@@ -142,4 +142,4 @@ The short expiry (8 days) amplifies the skew because near-term event risk is pri
 - Cox, J., Ross, S., Rubinstein, M. (1979). Option Pricing: A Simplified Approach. Journal of Financial Economics, 7(3), 229-263.
 - NSE Options Chain: [nseindia.com](https://www.nseindia.com/option-chain)
 - RBI Policy Rates: [rbi.org.in](https://www.rbi.org.in)
-- SciPy Brent's Method: [docs.scipy.org](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.brentq.html)
+- SciPy Brent's Method: [docs.scipy.org](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.brentq.html)s
